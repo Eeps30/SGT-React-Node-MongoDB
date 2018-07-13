@@ -1,21 +1,37 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const keys = require('./config/keys');
-const {ObjectID} = require('mongodb');
-const bodyParser = require('')
+require('./config/config');
 
+const _ = require('lodash');
+const express = require('express');
+const bodyParser = require('body-parser');
+const {ObjectID} = require('mongodb');
+
+var {mongoose} = require('./db/mongoose');
 var {StudentInfo} = require('./models/student');
 var {TeacherInfo} = require('./models/teacher');
 
-mongoose.connect(keys.mongodbURI);
-let db = mongoose.connection;
+var app = express();
+const port = process.env.PORT;
 
-db.use
+app.use(bodyParser.json());
 
-db.once('open', () => {
-    console.log('Successful Connection to Database');
+//all paths go below this line
+
+app.post('/addNewStudent', (req, res) => {
+    var newStudent = new StudentInfo({
+        name: req.body.name,
+        course: req.body.course,
+        grade: req.body.grade
+    })
+
+    newStudent.save().then((doc) => {
+        res.send(doc);
+    }, (e) => {
+        res.status(400).send(e);
+    })
 })
 
-db.on('error', (err) => {
-    console.log('MongoDB Connection: ' + err);
-})
+app.listen(port, () => {
+  console.log(`Started up at port ${port}`);
+});
+
+module.exports = {app};
