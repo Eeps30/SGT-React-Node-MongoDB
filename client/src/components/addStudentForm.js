@@ -49,6 +49,7 @@ class AddStudentForm extends Component {
 
     handleSubmit(event){
         event.preventDefault();
+        console.log('submit fired');
 
         const { name, grade, course } = this.state
 
@@ -81,7 +82,7 @@ class AddStudentForm extends Component {
             return
         }
 
-        axios.post('/students/addstudent', {
+        axios.post('/addNewStudent', {
             name: name,
             grade: grade,
             course_name: course
