@@ -1,11 +1,11 @@
 {
     "test": {
-        "PORT": 3000,
+        "PORT": 9000,
         "MONGODB_URI": "mongodb://localhost:27017/sgtDB",
         "JWT_SECRET": "3589fgm3498sdo2ngpsp"
     },
     "development":{
-        "PORT": 3000,
+        "PORT": 9000,
         "MONGODB_URI": "mongodb://localhost:27017/sgtDB",
         "JWT_SECRET": "poiusabn325tmasoidvfty"
     }

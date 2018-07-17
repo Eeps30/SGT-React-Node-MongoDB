@@ -82,7 +82,7 @@ class AddStudentForm extends Component {
             return
         }
 
-        axios.post('/addNewStudent', {
+        axios.post('/api/addNewStudent', {
             name: name,
             grade: grade,
             course_name: course
@@ -90,7 +90,7 @@ class AddStudentForm extends Component {
 
           .then((response) => {
             
-            this.props.getStudentList()
+            // this.props.getStudentList()
 
             this.setState({
                 name: '',

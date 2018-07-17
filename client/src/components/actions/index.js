@@ -1,17 +1,6 @@
 import types from './types';
 import axios from 'axios';
 
-// export function addStudent(){
-//     const response = axios.post('/addNewStudent', {
-//         name, grade, course
-//     })
-
-//     return {
-//         type: types.ADD_NEW_STUDENT,
-//         payload: response
-//     }
-// }
-
 export function getStudentList(){
     const response = axios.get('/students')
 
