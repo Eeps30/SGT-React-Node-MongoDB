@@ -2,7 +2,7 @@ import types from './types';
 import axios from 'axios';
 
 export function getStudentList(){
-    const response = axios.get('/students')
+    const response = axios.get('/api/getStudents')
 
     return {
         type: types.GET_STUDENT_LIST_DATA,

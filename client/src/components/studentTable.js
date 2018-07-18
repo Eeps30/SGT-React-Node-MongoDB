@@ -47,7 +47,7 @@ class StudentTable extends Component {
         const { students } = this.props
 
         let newModalProps = this.props.students.find( function(student){
-            return student.id===id
+            return student.id === id
         })
 
         await this.setState({

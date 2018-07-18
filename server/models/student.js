@@ -18,6 +18,10 @@ var StudentInfo = mongoose.model('StudentInfo', {
         required: true,
         minlength: 1,
         trim: true
+    },
+    active: {
+        type: Number,
+        default: 1
     }
 })
 

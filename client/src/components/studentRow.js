@@ -22,14 +22,13 @@ class StudentRow extends Component {
     render(){
 
         const { students } = this.props
-        console.log('students:', students)
         
         const itemElements = students.map((item, index) => {
 
             return (
                 <tr key={index}>
                     <td>{item.name}</td>
-                    <td>{item.course_name}</td>
+                    <td>{item.course}</td>
                     <td>{item.grade}</td>
                     <button className="editButtonModal" onClick={this.editClicked.bind(this, item.id)}>Edit</button>
                     <td><StudentModal handleDelete={this.handleDelete.bind(this, item.id)}/></td>

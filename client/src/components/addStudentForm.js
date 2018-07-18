@@ -90,7 +90,7 @@ class AddStudentForm extends Component {
 
           .then((response) => {
             
-            // this.props.getStudentList()
+            this.props.getStudentList()
 
             this.setState({
                 name: '',
