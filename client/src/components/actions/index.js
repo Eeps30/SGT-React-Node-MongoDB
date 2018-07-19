@@ -31,9 +31,7 @@ export function getTeacherList(){
 }
 
 export function deleteStudent(id){
-    const response = axios.post('/students/delete', {
-            id
-        })
+    const response = axios.delete(`/api/deleteStudent/${id}`)
 
     return {
         type: types.DELETE_SINGLE_STUDENT,

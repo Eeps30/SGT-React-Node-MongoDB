@@ -11,6 +11,7 @@ class StudentRow extends Component {
     }
 
     async handleDelete(id){
+        console.log('student being deleted: ', id)
         await this.props.deleteStudent(id)
         this.props.getStudentList()
     }
@@ -22,7 +23,7 @@ class StudentRow extends Component {
     render(){
 
         const { students } = this.props
-        
+        console.log('List of students', students);
         const itemElements = students.map((item, index) => {
 
             return (
@@ -31,7 +32,7 @@ class StudentRow extends Component {
                     <td>{item.course}</td>
                     <td>{item.grade}</td>
                     <button className="editButtonModal" onClick={this.editClicked.bind(this, item.id)}>Edit</button>
-                    <td><StudentModal handleDelete={this.handleDelete.bind(this, item.id)}/></td>
+                    <td><StudentModal handleDelete={this.handleDelete.bind(this, item._id)}/></td>
                 </tr>
             )
 

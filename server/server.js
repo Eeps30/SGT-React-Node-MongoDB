@@ -38,7 +38,17 @@ app.post('/api/addNewStudent', (req, res) => {
 
     newStudent.save().then((doc) => {
         res.send(doc);
-        console.log('Student Added to DB');
+    }).catch((e) => {
+        res.status(400).send(e);
+    })
+})
+
+app.delete('/api/deleteStudent/:id', (req, res) => {
+    var id = req.params.id;
+    console.log('ID from the front end: ', id)
+
+    StudentInfo.findByIdAndRemove(id).then((doc) => {
+        res.send(doc);
     }).catch((e) => {
         res.status(400).send(e);
     })
@@ -47,7 +57,6 @@ app.post('/api/addNewStudent', (req, res) => {
 app.get('/api/getStudents', (req, res) => {
     StudentInfo.find({}).then((student) => {
         res.send(student);
-        console.log('All Students: ', student);
     })
 })
 
