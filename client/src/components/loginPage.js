@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import '../css/loginPage.css'
 
 class LoginPage extends Component {
     constructor(props){
@@ -36,7 +38,7 @@ class LoginPage extends Component {
                             <button>Clear Fields</button>
                         </div>
                         <div>
-                            <p>Don't have an account yet? Sign up HERE</p>
+                            <p>Don't have an account yet? Sign up <Link to="/signupPage">HERE</Link></p>
                         </div>
                         <p>{this.state.errorMessage}</p>
                     </form>

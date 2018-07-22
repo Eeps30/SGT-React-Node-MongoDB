@@ -1,0 +1,10 @@
+.signupContainer {
+    display: grid;
+    height: 700px;
+    grid-template-columns: 1fr;
+}
+
+.signupForm {
+    margin: 0 auto;
+    margin-top: 130px;
+}

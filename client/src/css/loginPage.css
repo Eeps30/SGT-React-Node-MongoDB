@@ -1,0 +1,10 @@
+.loginContainer {
+    display: grid;
+    height: 700px;
+    grid-template-columns: 1fr;
+}
+
+.loginForm {
+    margin: 0 auto;
+    margin-top: 130px;
+}
