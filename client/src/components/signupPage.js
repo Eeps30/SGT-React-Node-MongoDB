@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import '../css/signupPage.css'
+import axios from 'axios'
 
 class SignupPage extends Component {
     constructor(props){
@@ -12,8 +13,6 @@ class SignupPage extends Component {
             confirmPassword: '',
             errorMessage: ''
         }
-
-        
     }
 
     handleEmailEntry(event){
@@ -34,6 +33,25 @@ class SignupPage extends Component {
         })
     }
 
+    handleSubmit(event){
+        event.preventDefault()
+        axios.post('/api/newUser', {
+            email: this.state.email,
+            password: this.state.password
+          })
+
+          .then((response) => {
+            
+            console.log('Student has been entered into DB')
+
+          })
+
+          .catch(function (error) {
+            console.log(error);
+            return false
+          });
+    }
+
     render(){
         return(
             <div className="signupContainer">
@@ -42,9 +60,9 @@ class SignupPage extends Component {
                     <form>
                         <input onChange={this.handleEmailEntry.bind(this)} name="name" placeholder="Email" type="text" value={this.state.email}/>
                         <input onChange={this.handlePasswordEntry.bind(this)} name="course" placeholder="Password" type="text" value={this.state.password}/>
-                        <input onChange={this.handlePasswordEntry.bind(this)} name="course" placeholder="Confirm Password" type="text" value={this.state.confirmPassword}/>
+                        <input onChange={this.handleConfirmPassword.bind(this)} name="course" placeholder="Confirm Password" type="text" value={this.state.confirmPassword}/>
                         <div>
-                            <button>Confirm</button>
+                            <button onClick={this.handleSubmit.bind(this)}>Submit</button>
                         </div>
                         <div>
                             <p>Already have an account? Log In <Link to="/">HERE</Link></p>

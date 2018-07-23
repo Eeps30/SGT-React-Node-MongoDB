@@ -9,8 +9,9 @@ const path = require('path')
 const http = require('http')
 
 var {mongoose} = require('./db/mongoose');
-var {StudentInfo} = require('./models/student');
+var {StudentInfo} = require('./models/studentEntry');
 var {TeacherInfo} = require('./models/teacher');
+var {User} = require('./models/user');
 
 var app = express();
 const port = process.env.PORT;
@@ -42,6 +43,20 @@ app.post('/api/addNewStudent', (req, res) => {
         res.status(400).send(e);
     })
 })
+
+app.post('/api/newUser', (req, res) => {
+    console.log('Info from front end: ', req.body)
+    var body = _.pick(req.body, ['email', 'password']);
+    var user = new User(body);
+  
+    user.save().then(() => {
+      return user.generateAuthToken();
+    }).then((token) => {
+      res.header('x-auth', token).send(user);
+    }).catch((e) => {
+      res.status(400).send(e);
+    })
+});
 
 app.delete('/api/deleteStudent/:id', (req, res) => {
     var id = req.params.id;
