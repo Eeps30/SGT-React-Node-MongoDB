@@ -45,7 +45,6 @@ app.post('/api/addNewStudent', (req, res) => {
 })
 
 app.post('/api/newUser', (req, res) => {
-    console.log('Info from front end: ', req.body)
     var body = _.pick(req.body, ['email', 'password']);
     var user = new User(body);
   
@@ -57,6 +56,18 @@ app.post('/api/newUser', (req, res) => {
       res.status(400).send(e);
     })
 });
+
+app.post('/api/users/login', (req, res) => {
+    var body = _.pick(req.body, ['email', 'password']);
+
+    User.findByCredentials(body.email, body.password).then((user) => {
+      return user.generateAuthToken().then((token) => {
+        res.header('x-auth', token).send(user);
+      })
+    }).catch((e) => {
+      res.send(e);
+    })
+})
 
 app.delete('/api/deleteStudent/:id', (req, res) => {
     var id = req.params.id;

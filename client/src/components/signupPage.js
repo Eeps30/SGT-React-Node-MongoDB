@@ -39,11 +39,8 @@ class SignupPage extends Component {
             email: this.state.email,
             password: this.state.password
           })
-
           .then((response) => {
-            
             console.log('Student has been entered into DB')
-
           })
 
           .catch(function (error) {
