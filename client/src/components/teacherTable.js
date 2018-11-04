@@ -84,7 +84,7 @@ class TeacherTable extends Component {
                     </tbody>
                 </table>
                 <AddTeacherForm/>
-                <Link className="btn viewStudentsButton" to="/">Students</Link>
+                <Link className="btn viewStudentsButton" to="/studentTable">Students</Link>
                 <Link className="btn viewTeachersTab" to="/teacherTable">Teachers</Link>
             </div>
             <EditTeacherModal className="teachersEditModal" handleEdit={this.handleEdit.bind(this)} teacherInfo={this.state.modalProps} editIsOpen={this.state.editModalIsActive} toggleModal={this.toggleModal.bind(this)}/>

@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import '../css/loginPage.css'
 import axios from 'axios'
+import Books from '../css/images/download.png'
 
 class LoginPage extends Component {
     constructor(props){
@@ -33,7 +34,11 @@ class LoginPage extends Component {
             password: this.state.password
           })
           .then((response) => {
-              console.log(response)
+              if(response.data === ""){
+                  console.log('User not found')
+              }else{
+                  this.props.history.push('/studentTable')
+              }
           })
           .catch(function (error) {
             return false
@@ -44,15 +49,17 @@ class LoginPage extends Component {
         return (
             <div className="loginContainer">
                 <div className="loginForm">
-                    <h2>Please Log In</h2>
+                    <img src={Books}/>
+                    <h2>Welcome to Student Grade Table</h2>
+                    <p>Login with your given <strong>Teacher ID</strong></p>
                     <form>
-                        <input onChange={this.handleEmailEntry.bind(this)} name="name" placeholder="Email" type="text" value={this.state.name}/>
+                        <input onChange={this.handleEmailEntry.bind(this)} name="name" placeholder="TeacherID" type="text" value={this.state.name}/>
                         <input onChange={this.handlePasswordEntry.bind(this)} name="course" placeholder="Password" type="text" value={this.state.course}/>
                         <div>
-                            <button onClick={this.handleSubmit.bind(this)}>Log In</button>
+                            <button className="loginButton" onClick={this.handleSubmit.bind(this)}>Log In</button>
                         </div>
                         <div>
-                            <p>Don't have an account yet? Sign up <Link to="/signupPage">HERE</Link></p>
+                            <p className="createAccount"><Link to="/signupPage">Create Account</Link></p>
                         </div>
                         <p>{this.state.errorMessage}</p>
                     </form>

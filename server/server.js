@@ -5,10 +5,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const {ObjectID} = require('mongodb');
 const cors = require('cors');
-const path = require('path')
-const http = require('http')
+const path = require('path');
+const http = require('http');
+const keys = require('./config/keys');
 
-var {mongoose} = require('./db/mongoose');
+// var {mongoose} = require('./db/mongoose');
+var mongoose = require('mongoose');
 var {StudentInfo} = require('./models/studentEntry');
 var {TeacherInfo} = require('./models/teacher');
 var {User} = require('./models/user');
@@ -18,7 +20,7 @@ const port = process.env.PORT;
 const publicPath = path.join(__dirname, '../client/public')
 
 app.use(bodyParser.json());
-app.use(express.static(publicPath))
+app.use(express.static(publicPath));
 
 app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
@@ -26,6 +28,19 @@ app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
     res.setHeader('Access-Control-Allow-Credentials', true);
     next();
+});
+
+//try connecting to mongodb and test connection
+
+mongoose.connect(keys.mongoURI);
+let db = mongoose.connection;
+
+db.once('open', () => {
+    console.log("MongoDB Connection: Successful");
+});
+
+db.on('error', (err) => {
+    console.log("MongoDB Connection: " + err);
 });
 
 //all paths go below this line
@@ -40,7 +55,7 @@ app.post('/api/addNewStudent', (req, res) => {
     newStudent.save().then((doc) => {
         res.send(doc);
     }).catch((e) => {
-        res.status(400).send(e);
+        console.log(e);
     })
 })
 
