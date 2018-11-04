@@ -59,10 +59,10 @@ class SignupPage extends Component {
                         <input onChange={this.handlePasswordEntry.bind(this)} name="course" placeholder="Password" type="text" value={this.state.password}/>
                         <input onChange={this.handleConfirmPassword.bind(this)} name="course" placeholder="Confirm Password" type="text" value={this.state.confirmPassword}/>
                         <div>
-                            <button onClick={this.handleSubmit.bind(this)}>Submit</button>
+                            <button className="signupButton" onClick={this.handleSubmit.bind(this)}>Create Account</button>
                         </div>
                         <div>
-                            <p>Already have an account? Log In <Link to="/">HERE</Link></p>
+                            <p className="signinButton"><Link to="/">Sign In</Link></p>
                         </div>
                         <p>{this.state.errorMessage}</p>
                     </form>
