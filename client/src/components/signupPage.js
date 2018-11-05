@@ -40,9 +40,9 @@ class SignupPage extends Component {
             password: this.state.password
           })
           .then((response) => {
-            console.log('Student has been entered into DB')
+            console.log('success');
+            this.props.history.push('/');
           })
-
           .catch(function (error) {
             console.log(error);
             return false
