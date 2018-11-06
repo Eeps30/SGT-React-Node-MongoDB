@@ -6,9 +6,11 @@ body, html {
 .navBar {
     height: 100vh;
     width: 300px;
-    border: solid black 2px;
+    border: solid black 1px;
 }
 
 .navBar > div {
-    
+    border: solid black 1px;
+    height: 60px;
+    box-sizing: border-box;
 }
