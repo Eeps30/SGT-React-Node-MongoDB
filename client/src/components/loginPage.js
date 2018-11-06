@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link, withRouter } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import '../css/loginPage.css'
 import axios from 'axios'
 import Books from '../css/images/download.png'
@@ -49,7 +49,7 @@ class LoginPage extends Component {
         return (
             <div className="loginContainer">
                 <div className="loginForm">
-                    <img src={Books}/>
+                    <img src={Books} alt="booksIcon"/>
                     <h2>Welcome to Student Grade Table</h2>
                     <p>Login with your given <strong>Teacher ID</strong></p>
                     <form>
