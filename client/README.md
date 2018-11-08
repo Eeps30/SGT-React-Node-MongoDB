@@ -16,6 +16,7 @@ View this project live [HERE](http://sgt.evanippolito.online/)
 - [x] Delete functionality imbedded in each row of the table.
 - [x] Edit functionality retrieves the data of the student or teacher clicked to be updated.
 - [x] Switch tabs on the table to move from the Student to Teacher tables.
+- [x] Custom Icon pack made by Smashicons.
 
 ## Technologies Used
 
