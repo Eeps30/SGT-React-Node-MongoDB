@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import './css/app.css';
 import LandingPage from './newUI/components/landingPage';
+import LoginPage from './components/loginPage';
 
 class App extends Component {  
   
@@ -20,7 +21,8 @@ class App extends Component {
 
           {/* New UI */}
           
-          <Route exact path = '/' component={LandingPage}/>
+          <Route exact path = '/' component={LoginPage}/>
+          <Route exact path = '/landing' component={LandingPage}/>
 
         </div>
     );

@@ -6,8 +6,8 @@ class NavBar extends Component {
         return (
             <div className="navBar">
                 <div>Admin</div>
-                <div>row2</div>
-                <div>row3</div>
+                <div>Tables</div>
+                <div>Student Documents</div>
                 <div>row4</div>
             </div>
         )
