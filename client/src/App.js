@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import './css/app.css';
 import LandingPage from './newUI/components/landingPage';
-import LoginPage from './components/loginPage';
-import SignupPage from './components/signupPage';
+import LoginPage from './newUI/components/loginPage';
+import SignupPage from './newUI/components/signupPage';
 
 class App extends Component {  
   

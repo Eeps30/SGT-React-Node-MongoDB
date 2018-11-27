@@ -1,0 +1,11 @@
+.loginErrorMessage {
+    background-color: #ffa8b9;
+    width: 325px;
+    border-radius: 2px;
+    margin: 0 auto;
+}
+
+.loginErrorMessage > p {
+    margin-top: 5px;
+    padding: 5px;
+}
