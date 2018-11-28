@@ -8,9 +8,9 @@ class NavBar extends Component {
     render () {
         return (
             <div className="navBar">
-                <div><img src={Admin} /><p>Admin</p></div>
-                <div><img src={Book} /><p>Classes</p></div>
-                <div><img src={Documents} /><p>Student Documents</p></div>
+                <div><img src={Admin} alt="adminIcon" /><p>Admin</p></div>
+                <div><img src={Book} alt="bookIcon" /><p>Classes</p></div>
+                <div><img src={Documents} alt="documentsIcon" /><p>Student Documents</p></div>
             </div>
         )
     }

@@ -6,7 +6,7 @@ import Books from '../css/images/download.png'
 import ErrorMessage from './errorMessage'
 
 class LoginPage extends Component {
-    constructor(props){
+        constructor(props){
         super(props)
 
         this.state = {
@@ -25,7 +25,7 @@ class LoginPage extends Component {
 
     handlePasswordEntry(event){
         this.setState({
-            password: event.target.value
+        password: event.target.value
         })
     }
 
@@ -66,11 +66,11 @@ class LoginPage extends Component {
                         <input onChange={this.handleEmailEntry.bind(this)} name="name" placeholder="TeacherID" type="text" value={this.state.name}/>
                         <input 
                         	onChange={this.handlePasswordEntry.bind(this)} 
-				onClick={this.resetErrorMessage.bind(this)}
-				name="course" 
-				placeholder="Password" 
-				type="password" 
-				value={this.state.course}
+                                onClick={this.resetErrorMessage.bind(this)}
+                                name="course" 
+                                placeholder="Password" 
+                                type="password" 
+                                value={this.state.course}
                         />
                         <div>
                         {this.state.showErrorMessage ? <ErrorMessage /> : true}

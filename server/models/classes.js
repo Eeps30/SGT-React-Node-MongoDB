@@ -27,4 +27,4 @@ var ClassesInfo = mongoose.model('ClassesInfo', {
     }
 })
 
-module.exports = {TeacherInfo}
+module.exports = {ClassesInfo}

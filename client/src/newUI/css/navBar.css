@@ -1,9 +1,4 @@
-body, html {
-    height: 100vh;
-}
-
 .navBar {
-    height: 100vh;
     width: 250px;
     border: solid black 1px;
     background-color: white;
