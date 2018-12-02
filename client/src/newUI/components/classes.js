@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import '../css/classes.css'
 import axios from 'axios'
+import { connect } from 'react-redux'
+import { getClassesList } from '../../components/actions'
 
 class Classes extends Component {
     constructor(props){
@@ -10,8 +12,18 @@ class Classes extends Component {
             className: '',
             description: '',
             numberOfStudents: '',
-            days: ''
+            days: '',
+            classesList: []
         }
+    }
+
+    async componentDidMount() {
+        await this.props.getClassesList()
+        const { classes } = this.props
+        console.log('Classes List: ', classes)
+        this.setState({
+            classesList: classes
+        })
     }
 
     handleClassNameChange(event) {
@@ -78,4 +90,10 @@ class Classes extends Component {
 	}
 }
 
-export default Classes
+function mapStateToProps(state){
+    return {
+        classes: state.list.items
+    }
+}
+
+export default connect(mapStateToProps, { getClassesList })(Classes)

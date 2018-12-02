@@ -21,6 +21,15 @@ export function getSelectedStudentData(id){
     }
 }
 
+export function getClassesList(){
+    const response = axios.get('/api/getClasses')
+
+    return {
+        type: types.GET_CLASSES_DATA,
+        payload: response
+    }
+}
+
 export function getTeacherList(){
     const response = axios.get('/teachers')
 

@@ -76,6 +76,12 @@ app.post('/api/addNewClass', (req, res) => {
     })
 })
 
+app.get('/api/getClasses', (req, res) => {
+    ClassesInfo.find({}).then((classes) => {
+        res.send(classes);
+    })
+})
+
 app.post('/api/newUser', (req, res) => {
     var body = _.pick(req.body, ['email', 'password']);
     var user = new User(body);

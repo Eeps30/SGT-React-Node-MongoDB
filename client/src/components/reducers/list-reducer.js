@@ -24,6 +24,8 @@ export default function(state = DEFAULT_STATE, action){
             return {...state, singleItem: action.payload}
         case types.EDIT_SINGLE_TEACHER:
             return {...state, singleItem: action.payload}
+        case types.GET_CLASSES_DATA:
+            return {...state, items: action.payload.data}
         default:
             return state;
     }
