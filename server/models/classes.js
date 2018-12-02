@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var ClassesInfo = mongoose.model('ClassesInfo', {
-    name: {
+    className: {
         type: String,
         required: true,
         minlength: 2,
@@ -10,20 +10,26 @@ var ClassesInfo = mongoose.model('ClassesInfo', {
     description: {
         type: String,
         required: true,
-        minlength: 4,
+        minlength: 3,
         trim: true
     },
     teacherID: {
         type: Number,
-        required: true,
+        required: false,
         minlength: 1,
         trim: true
     },
     studentsIDArray: {
         type: Array,
-        required: true,
+        required: false,
         minlength: 1,
         default: []
+    },
+    numberOfStudents: {
+        type: Number
+    },
+    days: {
+        type: String
     }
 })
 

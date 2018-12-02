@@ -14,6 +14,7 @@ var mongoose = require('mongoose');
 var {StudentInfo} = require('./models/studentEntry');
 var {TeacherInfo} = require('./models/teacher');
 var {User} = require('./models/user');
+var {ClassesInfo} = require('./models/classes')
 
 var app = express();
 const port = process.env.PORT;
@@ -53,6 +54,22 @@ app.post('/api/addNewStudent', (req, res) => {
     })
 
     newStudent.save().then((doc) => {
+        res.send(doc);
+    }).catch((e) => {
+        console.log(e);
+    })
+})
+
+app.post('/api/addNewClass', (req, res) => {
+    console.log(req.body)
+    var newClass = new ClassesInfo({
+        className: req.body.className,
+        description: req.body.description,
+        numberOfStudents: req.body.numberOfStudents,
+        days: req.body.days
+    })
+
+    newClass.save().then((doc) => {
         res.send(doc);
     }).catch((e) => {
         console.log(e);

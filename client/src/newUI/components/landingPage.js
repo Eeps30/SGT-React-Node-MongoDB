@@ -4,14 +4,14 @@ import Classes from './classes'
 import '../css/landingPage.css'
 
 class LandingPage extends Component {
-        render() {
-                return ( 
-                        <div className="container">
-                                <Navbar />
-                                <Classes />
-                        </div>
-                )
-        }
+	render() {
+		return ( 
+			<div className="container">
+				<Navbar />
+				<Classes />
+			</div>
+		)
+	}
 }
 
 export default LandingPage;

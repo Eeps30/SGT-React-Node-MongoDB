@@ -59,27 +59,27 @@ class LoginPage extends Component {
         return (
             <div className="loginContainer">
         	<div className="loginForm">
-                    <img src={Books} alt="booksIcon"/>
-                    <h2>Welcome to Student Grade Table</h2>
-                    <p>Login with your given <strong>Teacher ID</strong></p>
-                    <form>
-                        <input onChange={this.handleEmailEntry.bind(this)} name="name" placeholder="TeacherID" type="text" value={this.state.name}/>
-                        <input 
-                        	onChange={this.handlePasswordEntry.bind(this)} 
-                                onClick={this.resetErrorMessage.bind(this)}
-                                name="course" 
-                                placeholder="Password" 
-                                type="password" 
-                                value={this.state.course}
-                        />
-                        <div>
-                        {this.state.showErrorMessage ? <ErrorMessage /> : true}
-                            <button className="loginButton" onClick={this.handleSubmit.bind(this)}>Log In</button>
-                        </div>
-                        <div>
-                            <p className="createAccount"><Link to="/signup">Create Account</Link></p>
-                        </div>
-                    </form>
+                <img src={Books} alt="booksIcon"/>
+                <h2>Welcome to Student Grade Table</h2>
+                <p>Login with your given <strong>Teacher ID</strong></p>
+                <form>
+                    <input onChange={this.handleEmailEntry.bind(this)} name="name" placeholder="TeacherID" type="text" value={this.state.name}/>
+                    <input 
+                        onChange={this.handlePasswordEntry.bind(this)} 
+                            onClick={this.resetErrorMessage.bind(this)}
+                            name="course" 
+                            placeholder="Password" 
+                            type="password" 
+                            value={this.state.course}
+                    />
+                    <div>
+                    {this.state.showErrorMessage ? <ErrorMessage /> : true}
+                        <button className="loginButton" onClick={this.handleSubmit.bind(this)}>Log In</button>
+                    </div>
+                    <div>
+                        <p className="createAccount"><Link to="/signup">Create Account</Link></p>
+                    </div>
+                </form>
                 </div>
             </div>
         )
