@@ -3,6 +3,7 @@ import '../css/classes.css'
 import axios from 'axios'
 import { connect } from 'react-redux'
 import { getClassesList } from '../../components/actions'
+import ClassesRows from './classesRows';
 
 class Classes extends Component {
     constructor(props){
@@ -78,6 +79,7 @@ class Classes extends Component {
                             <th>Number of Students</th>
                             <th>Days</th>
                         </tr>
+                        <ClassesRows classes={this.state.classesList}/>
                     </tbody>
                 </table>
                 <input type="text" onChange={this.handleClassNameChange.bind(this)} placeholder="Class Name"></input>
