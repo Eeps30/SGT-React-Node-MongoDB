@@ -32,8 +32,15 @@ app.use(function (req, res, next) {
 });
 
 //try connecting to mongodb and test connection
+// let db = mongoose.connection;
+mongoose.connect(keys.mongoURI, {
+    useNewUrlParser: true,
+    auth: {
+        user: 'eeps30',
+        password: 'Av862549?'
+    }
+})
 
-mongoose.connect(keys.mongoURI);
 let db = mongoose.connection;
 
 db.once('open', () => {

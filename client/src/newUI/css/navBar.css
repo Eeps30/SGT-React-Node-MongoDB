@@ -29,3 +29,9 @@
     padding-left: 10px;
     color: rgb(87, 87, 87);
 }
+
+.downCaret { 
+    float: right;
+    padding-right: 15px;
+    padding-top: 20px;
+}

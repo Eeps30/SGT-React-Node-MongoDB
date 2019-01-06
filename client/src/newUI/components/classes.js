@@ -74,10 +74,10 @@ class Classes extends Component {
                 <table>
                     <tbody>
                         <tr>
-                            <th>Class</th>
-                            <th>Description</th>
-                            <th>Number of Students</th>
-                            <th>Days</th>
+                            <th align="left">Class</th>
+                            <th align="left">Description</th>
+                            <th align="left">Number of Students</th>
+                            <th align="left">Days</th>
                         </tr>
                         <ClassesRows classes={this.state.classesList}/>
                     </tbody>
