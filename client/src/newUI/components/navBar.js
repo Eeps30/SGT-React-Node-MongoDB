@@ -12,13 +12,22 @@ class NavBar extends Component {
         this.state = {
             show: false
         }
+        this.toggleShow = this.toggleShow.bind(this);
+    }
+
+    toggleShow() {
+        this.setState({show: !this.state.show})
     }
 
     render () {
         return (
             <div className="navBar">
                 <div><img src={Admin} alt="adminIcon" /><p>Admin</p></div>
-                <div><img src={Book} alt="bookIcon" /><p>Classes</p><img className="downCaret" src={DownCaret}></img></div>
+                <div onClick={this.toggleShow}>
+                    <img src={Book} alt="bookIcon" />
+                    <p>Classes</p>
+                    <img className="downCaret" src={DownCaret}></img>
+                </div>
                 <div><img src={Documents} alt="documentsIcon" /><p>Current Assignments</p></div>
             </div>
         )
