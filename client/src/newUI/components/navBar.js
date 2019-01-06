@@ -27,6 +27,13 @@ class NavBar extends Component {
                     <img src={Book} alt="bookIcon" />
                     <p>Classes</p>
                     <img className="downCaret" src={DownCaret}></img>
+                    {this.state.show && (
+                        <div show={this.state.show}>
+                            <div>math</div>
+                            <div>calc</div>
+                            <div>science</div>
+                        </div>)
+                    }
                 </div>
                 <div><img src={Documents} alt="documentsIcon" /><p>Current Assignments</p></div>
             </div>
