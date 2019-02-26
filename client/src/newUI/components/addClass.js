@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux'
 import { addNewClass } from '../../components/actions'
+import '../css/classes.css'
 
 class AddNewClass extends Component {
     constructor(props){
@@ -64,13 +65,14 @@ class AddNewClass extends Component {
 
     render() {
         return (
-            <div>
+            <React.Fragment>
+                <h3>Add Class</h3>
                 <input type="text" value={this.state.className} onChange={this.handleClassNameChange.bind(this)} placeholder="Class Name"></input>
                 <input type="text" value={this.state.description} onChange={this.handleDescriptionChange.bind(this)} placeholder="Description"></input>
                 <input type="text" value={this.state.numberOfStudents} onChange={this.handleNumOfStudentsChange.bind(this)} placeholder="Number of Students"></input>
                 <input type="text" value={this.state.days} onChange={this.handleDaysChange.bind(this)} placeholder="Days"></input>
 				<button onClick={this.handleSubmit.bind(this)}>Add Class</button>
-            </div>
+            </React.Fragment>
         )
     }
 }

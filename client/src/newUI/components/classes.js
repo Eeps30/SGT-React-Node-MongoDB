@@ -26,20 +26,25 @@ class Classes extends Component {
 
 	render () {
 		return (
-			<div className="classes">
-                <table>
-                    <tbody>
-                        <tr>
-                            <th align="left">Class</th>
-                            <th align="left">Description</th>
-                            <th align="left">Number of Students</th>
-                            <th align="left">Days</th>
-                        </tr>
-                        <ClassesRows classes={this.state.classesList}/>
-                    </tbody>
-                </table>
-                <AddClass />
-			</div>
+                <div className="classesContainer">
+                    <div className="classesTable">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th align="left">Class</th>
+                                <th align="left">Description</th>
+                                <th align="left">Number of Students</th>
+                                <th align="left">Days</th>
+                                <th align="left">Operations</th>
+                            </tr>
+                            <ClassesRows classes={this.state.classesList}/>
+                        </tbody>
+                    </table>
+                    </div>
+                    <div className="addClass">
+                        <AddClass />
+                    </div>
+                </div>
 		)
 	}
 }

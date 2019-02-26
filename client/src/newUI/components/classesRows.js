@@ -17,6 +17,8 @@ class ClassesRows extends Component {
                     <td>{item.description}</td>
                     <td>{item.numberOfStudents}</td>
                     <td>{item.days}</td>
+                    <button>Delete</button>
+                    <button>Edit</button>
                 </tr>
             )
 

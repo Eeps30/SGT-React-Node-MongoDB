@@ -4,3 +4,8 @@
     letter-spacing: normal;
     font-family: Open Sans,sans-serif;
 }
+
+.classesRows > button {
+    margin-top: 17px;
+    margin-left: 10px;
+}
