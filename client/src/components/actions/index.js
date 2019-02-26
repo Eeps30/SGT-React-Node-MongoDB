@@ -1,6 +1,15 @@
 import types from './types';
 import axios from 'axios';
 
+export function addNewClass() {
+    const response = axios.put('/api/addNewClass')
+
+    return {
+        type: types.ADD_NEW_CLASS,
+        payload: response
+    }
+}
+
 export function getStudentList(){
     const response = axios.get('/api/getStudents')
 

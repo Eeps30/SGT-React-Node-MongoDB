@@ -26,7 +26,7 @@ class NavBar extends Component {
                 <div onClick={this.toggleShow}>
                     <img src={Book} alt="bookIcon" />
                     <p>Classes</p>
-                    <img className="downCaret" src={DownCaret}></img>
+                    <img alt="downCaret" className="downCaret" src={DownCaret}></img>
                     {this.state.show && (
                         <div show={this.state.show}>
                             <div>math</div>

@@ -8,7 +8,7 @@ const DEFAULT_STATE = {
 
 export default function(state = DEFAULT_STATE, action){
     switch(action.type){
-        case types.ADD_NEW_STUDENT:
+        case types.ADD_NEW_CLASS:
             return {...state, items: action.payload.data.data}
         case types.GET_STUDENT_LIST_DATA:
             return {...state, items: action.payload.data}
