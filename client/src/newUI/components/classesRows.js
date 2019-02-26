@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import '../css/classesRows.css'
+import axios from 'axios'
+import { connect } from 'react-redux'
+import { deleteClass } from '../../components/actions'
 
 class ClassesRows extends Component {
     constructor(props){
@@ -17,7 +20,7 @@ class ClassesRows extends Component {
                     <td>{item.description}</td>
                     <td>{item.numberOfStudents}</td>
                     <td>{item.days}</td>
-                    <button>Delete</button>
+                    <button onClick={this.props.deleteClass(this, item._id)}>Delete</button>
                     <button>Edit</button>
                 </tr>
             )
@@ -30,4 +33,10 @@ class ClassesRows extends Component {
     }
 }
 
-export default ClassesRows
+function mapStateToProps(state){
+    return {
+        classes: state.list.items
+    }
+}
+
+export default connect(mapStateToProps, { deleteClass })(ClassesRows)

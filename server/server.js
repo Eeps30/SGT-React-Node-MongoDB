@@ -125,6 +125,17 @@ app.delete('/api/deleteStudent/:id', (req, res) => {
     })
 })
 
+app.delete('/api/deleteClass/:id', (req, res) => {
+    let id = req.params.id;
+    console.log('Class being deleted: ', id);
+
+    ClassesInfo.findByIdAndRemove(id).then((doc) => {
+        res.send(doc);
+    }).catch((e) => {
+        res.status(400).send(e);
+    })
+})
+
 app.get('/api/getStudents', (req, res) => {
     StudentInfo.find({}).then((student) => {
         res.send(student);

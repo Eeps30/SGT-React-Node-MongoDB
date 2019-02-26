@@ -5,6 +5,7 @@
 
 .classesTable {
     height: fit-content;
+    width: 825px;
     margin: 0 auto;
     margin-top: 20px;
     margin-right: 50px;
@@ -13,6 +14,10 @@
     font-weight: 700;
     letter-spacing: normal;
     font-family: Open Sans,sans-serif;
+}
+
+.classesTable > table {
+    width: -webkit-fill-available;
 }
 
 .classesTable th {
@@ -26,9 +31,18 @@
 }
 
 .addClass {
-    width: 180px;
+    width: 200px;
     height: fit-content;
+    margin-top: 20px;
     background-color: white;
     padding: 20px;
-    border-radius: 2px;
+    border-radius: 4px;
+}
+
+.addClass > h3 {
+    margin-top: 5px;
+}
+
+.addClass > input {
+    margin-bottom: 10px;
 }

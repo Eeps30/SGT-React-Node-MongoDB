@@ -57,6 +57,16 @@ export function deleteStudent(id){
     }
 }
 
+export function deleteClass(id){
+    const response = axios.delete(`/api/deleteClass/${id}`)
+    console.log('class id', id);
+
+    return {
+        type: types.DELETE_CLASS,
+        payload: response
+    }
+}
+
 export function deleteTeacher(id){
     const response = axios.post('/teachers/delete', {
             id
